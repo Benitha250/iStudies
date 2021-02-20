@@ -15,22 +15,7 @@
         android:paddingEnd="80dp"
         tools:ignore="MissingConstraints">
     </androidx.viewpager2.widget.ViewPager2>
-
-    <!--    <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/architects_daughter"
-            android:text="iStudy"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/blue"
-            android:textSize="50dp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            android:layout_marginBottom="600dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />-->
+    
 
     <Button
         android:id="@+id/button"
