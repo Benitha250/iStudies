@@ -7,14 +7,21 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+    @BindView(R.id.tohomebutton)
+    Button toHomeButton;
 
     private ViewPager2 viewPager2;
     private Handler slideHandler = new Handler();
@@ -23,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
 
         viewPager2 = findViewById(R.id.viewpager);
 
@@ -56,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
                 slideHandler.removeCallbacks(sliderRunnable);
                 slideHandler.postDelayed(sliderRunnable,3000);
+            }
+        });
+
+        toHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
