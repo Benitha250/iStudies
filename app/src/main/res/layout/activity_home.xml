@@ -84,9 +84,10 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="44dp"
                         android:layout_marginTop="13dp"
-                        app:srcCompat="@drawable/news"
+                        android:src="@drawable/news"
                         android:layout_marginLeft="44dp"
                         android:layout_alignParentLeft="true" />
+
 
                     <TextView
                         android:id="@+id/textView3"
@@ -125,7 +126,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="41dp"
-                        app:srcCompat="@drawable/book_1"
+                        android:src="@drawable/book_1"
                         android:layout_marginRight="41dp"
                         android:layout_alignParentRight="true" />
 
@@ -179,7 +180,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="44dp"
                         android:layout_marginTop="13dp"
-                        app:srcCompat="@drawable/ic_baseline_calendar_today_24"
+                        android:src="@drawable/ic_baseline_calendar_today_24"
                         android:layout_marginLeft="44dp"
                         android:layout_alignParentLeft="true" />
 
@@ -220,7 +221,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="41dp"
-                        app:srcCompat="@drawable/payment"
+                        android:src="@drawable/payment"
                         android:layout_marginRight="41dp"
                         android:layout_alignParentRight="true" />
 
@@ -274,7 +275,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="44dp"
                         android:layout_marginTop="13dp"
-                        app:srcCompat="@drawable/contacts"
+                        android:src="@drawable/contacts"
                         android:layout_marginLeft="44dp"
                         android:layout_alignParentLeft="true" />
 
@@ -315,7 +316,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="41dp"
-                        app:srcCompat="@drawable/alert"
+                        android:src="@drawable/alert"
                         android:layout_marginRight="41dp"
                         android:layout_alignParentRight="true" />
 
