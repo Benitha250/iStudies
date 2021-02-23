@@ -72,7 +72,7 @@
         android:inputType="textEmailAddress"
         android:textColorHint="@color/navigation"/>
 
-    <EditText
+        <EditText
         android:id="@+id/password"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -81,15 +81,60 @@
         android:inputType="textPassword"
         android:textColorHint="@color/navigation" />
 
-    <EditText
+        <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:textColorHint="@color/navigation"/>
+        <!--<EditText
+            android:id="@+id/phone"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/navigation"
+            android:hint="Phone number"
+            android:inputType="phone"/>
 
-    <Button
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:inputType="text"
+            android:textColorHint="@color/navigation"/>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccpicker"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:ccp_countryPreference="us,in"
+                />
+
+            <EditText
+                android:id="@+id/carrierNumber"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:hint="phone"
+                android:textColorHint="@color/navigation"
+                android:inputType="phone"
+                android:singleLine="true" />
+            <ImageView
+                android:id="@+id/imageCheck"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_check_circle"
+                />
+        </LinearLayout>
+
+
+        <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

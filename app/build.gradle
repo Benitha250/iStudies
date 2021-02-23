@@ -55,4 +55,6 @@ dependencies {
 
     //awesome validation dependency
     implementation 'com.basgeekball:awesome-validation:4.2'
+    //phonecodepicker
+    implementation 'com.hbb20:ccp:2.4.5'
 }
