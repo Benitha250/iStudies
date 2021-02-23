@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.istudy.models.RegisterRequest;
 import com.example.istudy.models.RegisterResponse;
 import com.example.istudy.services.ApiClient;
@@ -32,24 +36,39 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.password) EditText password;
     @BindView(R.id.confirmPassword) EditText confirmPassword;
 
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
+        //validation style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        // add validations
+        awesomeValidation.addValidation(this,R.id.names, RegexTemplate.NOT_EMPTY,R.string.invalid_names);
+        awesomeValidation.addValidation(this,R.id.username, RegexTemplate.NOT_EMPTY,R.string.invalid_username);
+        awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
+        awesomeValidation.addValidation(this,R.id.password, ".{3,}",R.string.week_passwor);
+        awesomeValidation.addValidation(this,R.id.confirmPassword, ".{3,}",R.string.week_passwor);
+
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Name = name.getText().toString();
-                String Email = email.getText().toString();
-                String Password = password.getText().toString();
-                String Password2 = confirmPassword.getText().toString();
+                if(awesomeValidation.validate() ) {
+                    String Name = name.getText().toString();
+                    String Email = email.getText().toString();
+                    String Password = password.getText().toString();
+                    String Password2 = confirmPassword.getText().toString();
 
-                RegisterRequest registerRequest = new RegisterRequest( Name, Password, Password2, Email);
+                    RegisterRequest registerRequest = new RegisterRequest( Name, Password, Password2, Email);
 
 
-                registerUser(registerRequest);
+                    registerUser(registerRequest);
+                }
+
             }
         });
         toLoginPage.setOnClickListener(new View.OnClickListener() {
