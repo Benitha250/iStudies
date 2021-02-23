@@ -2,6 +2,7 @@ package com.example.istudy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -34,12 +35,14 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.username) EditText name;
     @BindView(R.id.password) EditText password;
     AwesomeValidation awesomeValidation;
+    private ProgressDialog mAuthProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        createAuthProgressDialog();
 
         //validation style
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
@@ -57,6 +60,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     LoginRequest loginRequest = new LoginRequest(Name,Password);
                     loginUser(loginRequest);
+                }else{
+                    String message = "Aunthentication failed";
+                    Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -70,22 +76,39 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Please wait while we are checking......");
+        mAuthProgressDialog.setCancelable(false);
+    }
     public void loginUser(LoginRequest loginRequest){
+        mAuthProgressDialog.show();
         Call<LoginResponse> loginResponseCall = ApiClient.getService().LoginUser(loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                mAuthProgressDialog.dismiss();
+                LoginResponse loginResponse = response.body();
                 if(response.isSuccessful()){
                     String message = "Succeffully logged in";
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-                    LoginResponse loginResponse = response.body();
                     startActivity(new Intent(LoginActivity.this,HomeActivity.class).putExtra("data",loginResponse));
                     finish();
+                    /*
+                     if(result.equalsIgnoreCase("Login")){
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                        startActivity(intent);
+
+                    }else{
+                        Toast.makeText(LoginActivity.this,"Email or Password mismatched",Toast.LENGTH_SHORT).show();
+                    }
+                    * */
 
 
 
                 }else{
-                    String message = "An error occured. Please try again";
+                    String message = "Email or Password mismatched. Please, check and try again";
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
 
                 }

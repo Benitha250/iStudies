@@ -16,4 +16,6 @@
     <string name="invalid_username">Please Enter your username</string>
     <string name="invalid_names">Please Enter your name</string>
     <string name="week_passwor">Password should be atleast 3 characters</string>
+    <string name="invalid_confirm_password">Password does not match</string>
+    <string name="invalid_phone">Please enter a valid Phone</string>
 </resources>
