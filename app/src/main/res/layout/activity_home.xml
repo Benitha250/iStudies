@@ -34,7 +34,7 @@
             android:textColor="@color/black"
             android:text="Simplicity and Excellence"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="89dp" />
+            android:layout_marginRight="60dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,7 +218,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="66dp"
+                        android:layout_marginEnd="41dp"
                         android:layout_marginBottom="22dp"
                         android:text="Online Payments"
                         android:layout_marginRight="66dp"
