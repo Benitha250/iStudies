@@ -10,17 +10,33 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.example.istudy.storage.SharedPreferenceManager;
+
 
 public class HomeActivity extends AppCompatActivity {
 
     private RelativeLayout homePage;
+    SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         homePage = findViewById(R.id.homePage);
+        sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(!SharedPreferenceManager.getInstance(this).isLoggedIn()){
+            Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+
+        }
     }
 
     @Override
@@ -34,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.profile:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this,ProfileActivity.class);
                 startActivity(intent);
                 break;
             case R.id.help:
@@ -44,10 +60,18 @@ public class HomeActivity extends AppCompatActivity {
                 homePage.setBackgroundColor(Color.GREEN);
                 break;
             case R.id.logout:
-                homePage.setBackgroundColor(Color.GREEN);
+                logoutUser();
                 break;
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void logoutUser(){
+        sharedPreferenceManager.logout();
+        Intent intent = new Intent(this,LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+
+        Toast.makeText(this,"Logged out",Toast.LENGTH_SHORT).show();
     }
 }
