@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                     LoginRequest loginRequest = new LoginRequest(Name,Password);
                     loginUser(loginRequest);
                 }else{
-                    String message = "Aunthentication failed";
+                    String message = "Authentication failed";
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
                 }
 
@@ -106,8 +106,10 @@ public class LoginActivity extends AppCompatActivity {
                 LoginResponse loginResponse = response.body();
 
                 if(response.isSuccessful()){
+
                     SharedPreferenceManager.getInstance(LoginActivity.this).saveUser(loginResponse);
-                    String message = "Succeffully logged in";
+                    String message = "Successfully logged in";
+                  
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class).putExtra("data",loginResponse);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -126,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 }else{
-                    String message = "Email or Password mismatched. Please, check and try again";
+                    String message = "Name or Password mismatched. Please, check and try again";
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
 
                 }

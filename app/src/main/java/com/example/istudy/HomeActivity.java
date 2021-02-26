@@ -3,17 +3,23 @@ package com.example.istudy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
+
 import android.widget.Toast;
 
 import com.example.istudy.storage.SharedPreferenceManager;
 
+import android.widget.TextView;
+
+import butterknife.BindView;
 
 public class HomeActivity extends AppCompatActivity {
 
