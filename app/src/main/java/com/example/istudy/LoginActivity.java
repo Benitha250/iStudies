@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.istudy.models.LoginRequest;
 import com.example.istudy.models.LoginResponse;
 import com.example.istudy.services.ApiClient;
+import com.example.istudy.storage.SharedPreferenceManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -76,6 +78,18 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(SharedPreferenceManager.getInstance(this).isLoggedIn()){
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+
+        }
+    }
+
     private void createAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading...");
@@ -90,10 +104,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 mAuthProgressDialog.dismiss();
                 LoginResponse loginResponse = response.body();
+
                 if(response.isSuccessful()){
+
+                    SharedPreferenceManager.getInstance(LoginActivity.this).saveUser(loginResponse);
                     String message = "Successfully logged in";
+                  
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this,HomeActivity.class).putExtra("data",loginResponse));
+                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class).putExtra("data",loginResponse);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                     finish();
                     /*
                      if(result.equalsIgnoreCase("Login")){
