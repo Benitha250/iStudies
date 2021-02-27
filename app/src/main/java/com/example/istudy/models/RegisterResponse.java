@@ -1,32 +1,28 @@
 package com.example.istudy.models;
 
 public class RegisterResponse {
-    private String username;
-    private String password;
+
+    private String response;
     private String email;
-    private int id;
+    private String username;
+    private String full_name;
+    private int phone_number;
 
-    public RegisterResponse(String username, String password, String email, int id) {
-        this.username = username;
-        this.password = password;
+
+    public RegisterResponse(String response, String email, String username, String full_name, int phone_number) {
+        this.response = response;
         this.email = email;
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
         this.username = username;
+        this.full_name = full_name;
+        this.phone_number = phone_number;
     }
 
-    public String getPassword() {
-        return password;
+    public String getResponse() {
+        return response;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setResponse(String response) {
+        this.response = response;
     }
 
     public String getEmail() {
@@ -37,11 +33,27 @@ public class RegisterResponse {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
+    public int getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(int phone_number) {
+        this.phone_number = phone_number;
     }
 }

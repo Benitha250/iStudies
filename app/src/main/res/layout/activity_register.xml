@@ -72,6 +72,15 @@
         android:inputType="textEmailAddress"
         android:textColorHint="@color/navigation"/>
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinnerlist"
+            android:prompt="@string/parent"
+            android:layout_marginBottom="10dp"
+            />
+
         <EditText
         android:id="@+id/password"
         android:layout_width="250dp"

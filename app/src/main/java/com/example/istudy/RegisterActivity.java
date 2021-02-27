@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -31,17 +32,15 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    @BindView(R.id.register)
-    Button register;
-    @BindView(R.id.toLoginPage)
-    Button toLoginPage;
-
+    @BindView(R.id.register) Button register;
+    @BindView(R.id.toLoginPage) Button toLoginPage;
     @BindView(R.id.email) EditText email;
+    @BindView(R.id.spinner) Spinner spinner;
     @BindView(R.id.username) EditText name;
-
+    @BindView(R.id.names) EditText names;
     @BindView(R.id.password) EditText password;
     @BindView(R.id.confirmPassword) EditText confirmPassword;
-    //@BindView(R.id.phone) EditText phone;
+    //@BindView(R.id.carrierNumber) EditText phone;
     //@BindView(R.id.age) EditText age;
 
     AwesomeValidation awesomeValidation;
@@ -117,20 +116,15 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(awesomeValidation.validate() ) {
+                    String FullNames = names.getText().toString();
                     String Name = name.getText().toString();
                     String Email = email.getText().toString();
                     String Password = password.getText().toString();
                     String Password2 = confirmPassword.getText().toString();
-                    //get formatted number i.e "+1 469-664-1766"
-                    //String phone =ccpicker.getFormattedFullNumber().toString();
-                    //get unformatted number i.e. "14696641766"
-                    //String phone =ccpicker.getFullNumber().toString();
-                    //get unformatted number with prefix "+" i.e "+14696641766"
-                    //String phone = ccpicker.getFullNumberWithPlus().toString();
+                    String Role = spinner.getSelectedItem().toString();
+                    String phone =ccpicker.getFormattedFullNumber().toString();
 
-
-                    RegisterRequest registerRequest = new RegisterRequest( Name, Password, Password2, Email);
-
+                    RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, phone, Password, Password2);
 
                     registerUser(registerRequest);
                 }else{
@@ -169,7 +163,7 @@ public class RegisterActivity extends AppCompatActivity {
                     finish();
 
                 }else {
-                    String message = "An error occured. Please try again";
+                    String message = "An error occurred. Please try again";
                     Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_SHORT).show();
 
                 }

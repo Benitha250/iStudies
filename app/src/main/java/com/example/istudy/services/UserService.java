@@ -10,7 +10,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface UserService {
-    @POST("login/")
+    @POST("token/")
     Call<LoginResponse> LoginUser(@Body LoginRequest loginRequest);
 
     @POST("register/")
