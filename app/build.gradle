@@ -57,4 +57,7 @@ dependencies {
     implementation 'com.basgeekball:awesome-validation:4.2'
     //phonecodepicker
     implementation 'com.hbb20:ccp:2.4.5'
+
+    //sendgrid
+    implementation files('libs/sendgrid-0.1.2-jar.jar')
 }

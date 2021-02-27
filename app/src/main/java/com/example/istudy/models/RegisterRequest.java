@@ -5,16 +5,17 @@ public class RegisterRequest {
     private String username;
     private String email;
     private String role;
-    private String phone_number;
+    private Integer phone_number;
     private String password;
     private String password2;
+
 
     public RegisterRequest(String full_name, String username, String email, String role, String phone_number, String password, String password2) {
         this.full_name = full_name;
         this.username = username;
         this.email = email;
         this.role = role;
-        this.phone_number = phone_number;
+        this.phone_number = Integer.parseInt(phone_number);
         this.password = password;
         this.password2 = password2;
     }
@@ -51,11 +52,11 @@ public class RegisterRequest {
         this.role = role;
     }
 
-    public String getPhone_number() {
+    public Integer getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(String phone_number) {
+    public void setPhone_number(Integer phone_number) {
         this.phone_number = phone_number;
     }
 

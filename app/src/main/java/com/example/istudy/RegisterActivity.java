@@ -40,8 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.names) EditText names;
     @BindView(R.id.password) EditText password;
     @BindView(R.id.confirmPassword) EditText confirmPassword;
-    //@BindView(R.id.carrierNumber) EditText phone;
-    //@BindView(R.id.age) EditText age;
+
 
     AwesomeValidation awesomeValidation;
     private ProgressDialog mAuthProgressDialog;
@@ -101,14 +100,11 @@ public class RegisterActivity extends AppCompatActivity {
         awesomeValidation.addValidation(this,R.id.names, RegexTemplate.NOT_EMPTY,R.string.invalid_names);
         awesomeValidation.addValidation(this,R.id.username, RegexTemplate.NOT_EMPTY,R.string.invalid_username);
         awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
-        //awesomeValidation.addValidation(this,R.id.password, ".{3,}",R.string.week_passwor);
+
         String regexPassword = ".{3,}";
         awesomeValidation.addValidation(this, R.id.password, regexPassword, R.string.week_passwor);
         awesomeValidation.addValidation(this, R.id.confirmPassword, R.id.password, R.string.invalid_confirm_password);
-        //awesomeValidation.addValidation(this, R.id.phone, "^[+]?[0-9]{10,13}$", R.string.invalid_phone);
-        //awesomeValidation.addValidation(this, R.id.phone, "^[+][1-9][0-9]{9,13}$", R.string.invalid_phone);
-        //awesomeValidation.addValidation(this, R.id.phone, "^0[1-9][0-9]{9}$", R.string.invalid_phone);
-        //awesomeValidation.addValidation(this, R.id.age, Range.closed(12, 60), R.string.invalid_age);
+
 
 
 
@@ -122,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
                     String Password = password.getText().toString();
                     String Password2 = confirmPassword.getText().toString();
                     String Role = spinner.getSelectedItem().toString();
-                    String phone =ccpicker.getFormattedFullNumber().toString();
+                    String phone =ccpicker.getFormattedFullNumber();
 
                     RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, phone, Password, Password2);
 
@@ -154,18 +150,17 @@ public class RegisterActivity extends AppCompatActivity {
         registerResponseCall.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                mAuthProgressDialog.dismiss();
-                RegisterResponse registerResponse = response.body();
                 if(response.isSuccessful()){
-                    String msg = registerResponse.getResponse();
-                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegisterActivity.this,HomeActivity.class);
+                    //RegisterResponse registerResponse = response.body();
+                    String msg = "Success";
+                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                     startActivity(intent);
-                    finish();
 
                 }else {
-                    String msg = registerResponse.getResponse();
-                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_SHORT).show();
+                    String msg = "failed";
+                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
+                    mAuthProgressDialog.dismiss();
 
                 }
 
@@ -174,7 +169,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 String message = t.getLocalizedMessage();
-                Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_LONG).show();
+                mAuthProgressDialog.dismiss();
 
             }
         });
