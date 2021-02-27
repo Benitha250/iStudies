@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.username) EditText name;
     @BindView(R.id.password) EditText password;
+
     AwesomeValidation awesomeValidation;
     private ProgressDialog mAuthProgressDialog;
 
