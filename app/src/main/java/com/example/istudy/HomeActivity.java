@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
 
     }
-    @Override
+/*    @Override
     protected void onStart() {
         super.onStart();
         if(!SharedPreferenceManager.getInstance(this).isLoggedIn()){
@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

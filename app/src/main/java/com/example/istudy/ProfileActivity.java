@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
         LoginResponse user = SharedPreferenceManager.getInstance(this).getUser();
-        welcome.setText("Welcome "+user.getEmail());
+        welcome.setText("Welcome "+user.getToken());
     }
     @Override
     protected void onStart() {

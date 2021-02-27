@@ -3,47 +3,28 @@ package com.example.istudy.models;
 import java.io.Serializable;
 
 public class LoginResponse implements Serializable {
-    private String username;
-    private String password;
-    private String email;
-    private int id;
 
-    public LoginResponse(String username, String password, String email, int id) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.id = id;
+    private String token;
+    private String access;
+
+    public LoginResponse(String token, String access) {
+        this.token = token;
+        this.access = access;
     }
 
-    public String getUsername() {
-        return username;
+    public String getToken() {
+        return token;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setToken(String token) {
+        this.token = token;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAccess() {
+        return access;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setAccess(String access) {
+        this.access = access;
     }
 }

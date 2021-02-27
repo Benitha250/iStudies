@@ -115,17 +115,6 @@ public class LoginActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
-                    /*
-                     if(result.equalsIgnoreCase("Login")){
-                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                        startActivity(intent);
-
-                    }else{
-                        Toast.makeText(LoginActivity.this,"Email or Password mismatched",Toast.LENGTH_SHORT).show();
-                    }
-                    * */
-
-
 
                 }else{
                     String message = "Name or Password mismatched. Please, check and try again";

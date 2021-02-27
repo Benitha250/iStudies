@@ -33,10 +33,8 @@ public class SharedPreferenceManager {
         SharedPreferences sharedPreferences= mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putInt("id",user.getId());
-        editor.putString("email",user.getEmail());
-        editor.putString("name",user.getUsername());
-        editor.putString("password",user.getPassword());
+        editor.putString("name",user.getToken());
+        editor.putString("password",user.getAccess());
 
         editor.apply();
 
@@ -48,10 +46,8 @@ public class SharedPreferenceManager {
     public  LoginResponse getUser(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
         LoginResponse user = new LoginResponse(
-                sharedPreferences.getString("name",null),
-                sharedPreferences.getString("password",null),
-                sharedPreferences.getString("email",null),
-                sharedPreferences.getInt("id",-1));
+                sharedPreferences.getString("token",null),
+                sharedPreferences.getString("access",null));
         return user;
     }
     public void clear(){
