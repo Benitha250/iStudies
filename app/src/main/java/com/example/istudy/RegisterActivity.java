@@ -155,16 +155,17 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 mAuthProgressDialog.dismiss();
+                RegisterResponse registerResponse = response.body();
                 if(response.isSuccessful()){
-                    String message = "Successfully logged in";
-                    Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_SHORT).show();
+                    String msg = registerResponse.getResponse();
+                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this,HomeActivity.class);
                     startActivity(intent);
                     finish();
 
                 }else {
-                    String message = "An error occurred. Please try again";
-                    Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_SHORT).show();
+                    String msg = registerResponse.getResponse();
+                    Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_SHORT).show();
 
                 }
 
