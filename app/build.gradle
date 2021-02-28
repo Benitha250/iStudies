@@ -12,6 +12,8 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,9 +57,17 @@ dependencies {
 
     //awesome validation dependency
     implementation 'com.basgeekball:awesome-validation:4.2'
+
     //phonecodepicker
     implementation 'com.hbb20:ccp:2.4.5'
 
     //sendgrid
     implementation files('libs/sendgrid-0.1.2-jar.jar')
+
+    //pdf reader
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
 }

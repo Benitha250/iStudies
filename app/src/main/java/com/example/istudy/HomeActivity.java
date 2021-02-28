@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import android.widget.Toast;
@@ -79,5 +80,10 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
 
         Toast.makeText(this,"Logged out",Toast.LENGTH_SHORT).show();
+    }
+
+    public void tobook(View view) {
+        Intent intent = new Intent(HomeActivity.this, Books.class);
+        startActivity(intent);
     }
 }
