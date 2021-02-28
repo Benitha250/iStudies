@@ -29,7 +29,7 @@
             android:textStyle="bold"
             android:padding="10dp"
             android:paddingHorizontal="8dp"
-            android:background="@drawable/rounded_design"
+            android:background="@drawable/rounded_button"
             android:layout_marginLeft="57dp" />
 
         <Button
