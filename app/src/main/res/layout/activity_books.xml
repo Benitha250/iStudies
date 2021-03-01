@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".Books">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,14 +11,12 @@
         android:id="@+id/homePage">
 
 
-
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="55dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="120dp"
             android:textSize="50dp"
             android:textColor="@color/black"
             android:text="Books"/>
@@ -151,7 +148,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="44dp"
                         android:layout_marginTop="13dp"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/book2"
                         android:layout_marginLeft="44dp"
                         android:layout_alignParentLeft="true" />
 
@@ -166,7 +163,7 @@
                         android:layout_marginStart="51dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="25dp"
-                        android:text="Calendar"
+                        android:text="P2 English Book"
                         android:layout_marginLeft="51dp"
                         android:layout_alignParentLeft="true" />
                 </RelativeLayout>
@@ -192,7 +189,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="41dp"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/book2"
                         android:layout_marginRight="41dp"
                         android:layout_alignParentRight="true" />
 
@@ -207,7 +204,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="41dp"
                         android:layout_marginBottom="22dp"
-                        android:text="Online Payments"
+                        android:text="P3 Math Book"
                         android:layout_marginRight="66dp"
                         android:layout_alignParentRight="true" />
                 </RelativeLayout>

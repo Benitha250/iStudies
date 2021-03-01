@@ -50,7 +50,7 @@
             android:layout_alignParentTop="true"
             android:hint="Username"
             android:layout_marginBottom="10dp"
-            android:textColorHint="@color/navigation"
+            android:textColorHint="@color/black"
             android:layout_alignParentLeft="true" />
 
 
@@ -61,16 +61,17 @@
             android:hint="password"
             android:layout_marginBottom="10dp"
             android:inputType="textPassword"
-            android:textColorHint="@color/navigation" />
+            android:textColorHint="@color/black" />
 
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/background"
+            android:text="Login"
             android:textColor="@color/white"
-            app:backgroundTint="@color/green"/>
+            app:backgroundTint="@color/green" />
 
         <TextView
             android:layout_width="wrap_content"
