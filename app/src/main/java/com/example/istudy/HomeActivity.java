@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private RelativeLayout homePage;
     SharedPreferenceManager sharedPreferenceManager;
+    private ImageView lessonsicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,16 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         homePage = findViewById(R.id.homePage);
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
+        lessonsicon = findViewById(R.id.imageView3);
+        lessonsicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ClassesActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 /*    @Override

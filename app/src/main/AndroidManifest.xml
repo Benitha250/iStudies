@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".books.p3eng"></activity>
+        <activity android:name=".NotesContentActivity"
+            android:theme="@style/Theme.IStudyTrial"
+            ></activity>
+        <activity android:name=".NotesActivity"
+            android:theme="@style/Theme.IStudyTrial"/>
+        <activity android:name=".ClassesActivity" />
+        <activity android:name=".books.p3eng" />
         <activity android:name=".books.p1eng" />
         <activity android:name=".Books" />
         <activity android:name=".ProfileActivity" />
