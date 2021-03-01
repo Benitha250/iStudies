@@ -36,7 +36,6 @@ public class ClassesActivity extends AppCompatActivity {
 
     private void initmdataClasses() {
         mdata = new ArrayList<>();
-        mdata.add(new Classe(R.drawable.crayons));
         mdata.add(new Classe(R.drawable.painting));
     }
 

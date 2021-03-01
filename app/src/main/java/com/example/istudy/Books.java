@@ -25,4 +25,9 @@ public class Books extends AppCompatActivity {
         Intent intent = new Intent(Books.this, p3eng.class);
         startActivity(intent);
     }
+
+    public void topayment(View view) {
+        Intent intent = new Intent(Books.this, PaymentActivity.class);
+        startActivity(intent);
+    }
 }

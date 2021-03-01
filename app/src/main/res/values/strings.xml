@@ -11,11 +11,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="week_password">Password should be at least 6 characters</string>
+    <string name="week_password">Password should be at least 8 characters</string>
     <string name="invalid_email">Please enter a valid email</string>
     <string name="invalid_username">Please Enter your username</string>
     <string name="invalid_names">Please Enter your name</string>
-    <string name="week_passwor">Password should be atleast 3 characters</string>
+    <string name="week_passwor">Password should be atleast 8 characters</string>
     <string name="invalid_confirm_password">Password does not match</string>
     <string name="invalid_phone">Please enter a valid Phone</string>
 

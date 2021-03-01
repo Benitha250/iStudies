@@ -55,6 +55,7 @@
                 android:elevation="5dp">
 
                 <RelativeLayout
+                    android:onClick="tolessons"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
