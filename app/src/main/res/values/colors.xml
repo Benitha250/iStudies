@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
    <color name="green">#A3CB38</color>
-    <!-- <color name="grey">#C7C7C7</color>
+    <color name="grey">#C7C7C7</color>
     <color name="dark_grey">#878787</color>
-    <color name="blue">#192a56</color>-->
+    <color name="blue">#192a56</color>
 
     <color name="green2">#76B947</color>
     <color name="navigation">#A3CB38</color>

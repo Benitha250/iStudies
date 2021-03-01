@@ -45,16 +45,6 @@ public class ClassesAdapter extends RecyclerView.Adapter<ClassesAdapter.classesv
         Glide.with(holder.itemView.getContext()).load(mdata.get(position).getDrawableResource())
                 .transform(new CenterCrop(),new RoundedCorners(16))
                 .into(holder.img_class);
-/*        if(mdata.size()==1){
-            holder.title_class.setText("Lesson 1:English");
-
-        }
-        else if(mdata.size()==0){
-            holder.title_class.setText("Lesson 2:Art");
-        }*/
-
-        //holder.title_class.setText("Lesson 1:English");
-        //holder.title_class.setText("Lesson 2:Art");
 
     }
 

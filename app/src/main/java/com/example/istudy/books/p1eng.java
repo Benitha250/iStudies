@@ -18,6 +18,7 @@ public class p1eng extends AppCompatActivity {
 
         pdfView = findViewById(R.id.pdfView);
         pdfView.fromAsset("English P1 SB.pdf")
+                .pages(0)
                 .enableSwipe(true)
                 .load();
     }
