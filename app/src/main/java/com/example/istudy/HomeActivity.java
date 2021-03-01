@@ -102,4 +102,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, ClassesActivity.class);
         startActivity(intent);
     }
+
+    public void toCourse(View view) {
+        Intent intent = new Intent(HomeActivity.this, Courses.class);
+        startActivity(intent);
+    }
 }
