@@ -38,12 +38,14 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.spinner) Spinner spinner;
     @BindView(R.id.username) EditText name;
     @BindView(R.id.names) EditText names;
+    //@BindView(R.id.phone) EditText phoneN;
     @BindView(R.id.password) EditText password;
     @BindView(R.id.confirmPassword) EditText confirmPassword;
 
 
     AwesomeValidation awesomeValidation;
     private ProgressDialog mAuthProgressDialog;
+
     private CountryCodePicker ccpicker;
     private EditText carrierNumber;
     private ImageView imgCheck;
@@ -118,9 +120,10 @@ public class RegisterActivity extends AppCompatActivity {
                     String Password = password.getText().toString();
                     String Password2 = confirmPassword.getText().toString();
                     String Role = spinner.getSelectedItem().toString();
-                    String phone =ccpicker.getFormattedFullNumber();
+                    String phone =ccpicker.getFullNumber();
+                    Double number = Double.parseDouble(phone);
 
-                    RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, phone, Password, Password2);
+                    RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, number, Password, Password2);
 
                     registerUser(registerRequest);
                 }else{
@@ -150,9 +153,9 @@ public class RegisterActivity extends AppCompatActivity {
         registerResponseCall.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                mAuthProgressDialog.dismiss();
 
                 if(response.isSuccessful()){
-                    //RegisterResponse registerResponse = response.body();
                     String msg = "Success";
                     Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
@@ -161,17 +164,15 @@ public class RegisterActivity extends AppCompatActivity {
                 }else {
                     String msg = "failed";
                     Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
-                    mAuthProgressDialog.dismiss();
-
                 }
 
             }
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                mAuthProgressDialog.dismiss();
                 String message = t.getLocalizedMessage();
                 Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_LONG).show();
-                mAuthProgressDialog.dismiss();
 
             }
         });

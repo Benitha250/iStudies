@@ -34,13 +34,13 @@
 
     <Button
         android:id="@+id/tohomebutton"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="150dp"
         android:layout_marginBottom="90dp"
+        android:background="@color/green"
         android:text="Get Started"
         android:textColor="@color/white"
-        app:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -48,7 +48,7 @@
         android:layout_width="143dp"
         android:layout_height="131dp"
         android:layout_marginRight="150dp"
-        android:layout_marginBottom="430dp"
+        android:layout_marginBottom="530dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo" />
