@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".Kindergarten"></activity>
-        <activity android:name=".Courses" />
+        <activity android:name=".CoursesActivity" />
         <activity android:name=".PaymentActivity" />
         <activity
             android:name=".NotesContentActivity"

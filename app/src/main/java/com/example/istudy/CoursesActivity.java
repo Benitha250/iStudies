@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.istudy.Adapter.PostAdapter;
-import com.example.istudy.models.Post;
+import com.example.istudy.Adapter.CoursesAdapter;
 import com.example.istudy.services.UserService;
 
 import java.util.List;
@@ -21,7 +21,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Courses extends AppCompatActivity {
+public class CoursesActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
 
@@ -41,25 +41,25 @@ public class Courses extends AppCompatActivity {
                 .build();
 
         UserService userService = retrofit.create(UserService.class);
-        Call<List<Post>> call = userService.getPost();
-        call.enqueue(new Callback<List<Post>>() {
+        Call<List<com.example.istudy.models.Courses>> call = userService.getPost();
+        call.enqueue(new Callback<List<com.example.istudy.models.Courses>>() {
             @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+            public void onResponse(Call<List<com.example.istudy.models.Courses>> call, Response<List<com.example.istudy.models.Courses>> response) {
 
                 if (!response.isSuccessful()){
-                    Toast.makeText(Courses.this, "Successfully retrieved!!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CoursesActivity.this, "Successfully retrieved!!!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                List<Post> postList = response.body();
-                PostAdapter postAdapter = new PostAdapter(Courses.this, postList);
-                recyclerView.setAdapter(postAdapter);
+                List<com.example.istudy.models.Courses> coursesList = response.body();
+                CoursesAdapter coursesAdapter = new CoursesAdapter(CoursesActivity.this, coursesList);
+                recyclerView.setAdapter(coursesAdapter);
             }
 
             @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
+            public void onFailure(Call<List<com.example.istudy.models.Courses>> call, Throwable t) {
 
-                Toast.makeText(Courses.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CoursesActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

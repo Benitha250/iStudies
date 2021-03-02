@@ -1,8 +1,12 @@
 package com.example.istudy.models;
 
-public class Post {
+public class Courses {
 
-    private String name, description;
+    private String id, name, description;
+
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
