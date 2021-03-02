@@ -1,8 +1,8 @@
 package com.example.istudy.services;
 
+import com.example.istudy.models.Courses;
 import com.example.istudy.models.LoginRequest;
 import com.example.istudy.models.LoginResponse;
-import com.example.istudy.models.Post;
 import com.example.istudy.models.RegisterRequest;
 import com.example.istudy.models.RegisterResponse;
 
@@ -21,7 +21,6 @@ public interface UserService {
     Call<RegisterResponse> RegisterUser(@Body RegisterRequest registerRequest);
 
     @GET("courses/")
-    Call<List<Post>> getPost();
-
+    Call<List<Courses>> getPost();
 }
 

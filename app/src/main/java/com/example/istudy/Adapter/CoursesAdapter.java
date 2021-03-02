@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.istudy.R;
-import com.example.istudy.models.Post;
+import com.example.istudy.models.Courses;
 
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
+public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.PostViewHolder> {
 
-    List<Post> postList;
+    List<Courses> coursesList;
     Context context;
 
-    public PostAdapter(Context context, List<Post> posts){
+    public CoursesAdapter(Context context, List<Courses> courses){
         this.context = context;
-        postList = posts;
+        coursesList = courses;
     }
 
     @NonNull
@@ -36,22 +36,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
 
-        Post post = postList.get(position);
-        holder.name.setText(post.getName());
-        //holder.description.setText(post.getDescription());
+        Courses courses = coursesList.get(position);
+        //holder.id.setText(courses.getId());
+        holder.name.setText(courses.getName());
+        //holder.description.setText(courses.getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return postList.size();
+        return coursesList.size();
     }
 
     public class PostViewHolder extends RecyclerView.ViewHolder{
-        TextView name/*, description*/;
+        TextView id, name/*, description*/;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            //id = itemView.findViewById(R.id.id);
             name = itemView.findViewById(R.id.name);
             //description = itemView.findViewById(R.id.description);
         }
