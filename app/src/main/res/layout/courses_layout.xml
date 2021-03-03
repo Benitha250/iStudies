@@ -11,21 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="vertical"
-        android:background="@drawable/background">
-
-<!--        <TextView
-            android:id="@+id/id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:text="Id"
-            />-->
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/name"
@@ -34,22 +20,21 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/atma_semibold"
             android:text="name"
-            />
-<!--        <TextView
+            android:textColor="@color/black"
+            android:textSize="35dp" />
+
+        <TextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/source_code_pro_semibold"
             android:text="description"
-            />-->
+            android:textColor="@color/black"
+            android:textSize="25dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

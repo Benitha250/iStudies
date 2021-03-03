@@ -37,9 +37,8 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.PostView
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
 
         Courses courses = coursesList.get(position);
-        //holder.id.setText(courses.getId());
         holder.name.setText(courses.getName());
-        //holder.description.setText(courses.getDescription());
+        holder.description.setText(courses.getDescription());
     }
 
     @Override
@@ -48,13 +47,12 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.PostView
     }
 
     public class PostViewHolder extends RecyclerView.ViewHolder{
-        TextView id, name/*, description*/;
+        TextView name, description;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            //id = itemView.findViewById(R.id.id);
             name = itemView.findViewById(R.id.name);
-            //description = itemView.findViewById(R.id.description);
+            description = itemView.findViewById(R.id.description);
         }
     }
 }

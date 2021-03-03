@@ -64,12 +64,13 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/imageView3"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="51dp"
-                        android:layout_marginTop="2dp"
-                        android:text="P1 English book"
                         android:layout_marginLeft="51dp"
-                        android:layout_alignParentLeft="true" />
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="P1 English book" />
 
                     <Button
                         android:id="@+id/pay1"
@@ -119,23 +120,13 @@
                         android:layout_below="@id/imageView4"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="2dp"
                         android:layout_marginStart="66dp"
+                        android:layout_marginLeft="66dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginBottom="22dp"
-                        android:text="P3 English book"
-                        android:layout_marginLeft="66dp" />
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="P3 English book" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView4"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginTop="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="2dp"
-                        android:padding="5dp"
-                        android:background="@color/navigation2"
-                        android:text="Free" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -182,26 +173,16 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/imageView6"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="51dp"
+                        android:layout_marginLeft="51dp"
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="25dp"
-                        android:text="P2 English Book"
-                        android:layout_marginLeft="51dp"
-                        android:layout_alignParentLeft="true" />
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="P2 English Book" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView6"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginTop="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="2dp"
-                        android:padding="5dp"
-                        android:background="@color/navigation2"
-                        android:text="Free" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -235,26 +216,16 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/imageView5"
                         android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="2dp"
                         android:layout_marginEnd="41dp"
-                        android:layout_marginBottom="22dp"
-                        android:text="P3 Math Book"
                         android:layout_marginRight="66dp"
-                        android:layout_alignParentRight="true" />
+                        android:layout_marginBottom="22dp"
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="P3 Math Book" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView5"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginTop="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="2dp"
-                        android:padding="5dp"
-                        android:background="@color/navigation2"
-                        android:text="Free" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
