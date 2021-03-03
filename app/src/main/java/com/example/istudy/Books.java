@@ -9,7 +9,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.istudy.books.p1eng;
+import com.example.istudy.books.p1math;
+import com.example.istudy.books.p2eng;
+import com.example.istudy.books.p2math;
 import com.example.istudy.books.p3eng;
+import com.example.istudy.books.p3math;
 import com.flutterwave.raveandroid.RavePayActivity;
 import com.flutterwave.raveandroid.RaveUiManager;
 import com.flutterwave.raveandroid.rave_java_commons.RaveConstants;
@@ -19,8 +23,6 @@ import butterknife.ButterKnife;
 
 public class Books extends AppCompatActivity {
 
-    @BindView(R.id.pay1)
-    Button payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +33,35 @@ public class Books extends AppCompatActivity {
 
     }
 
-    public void button1(View view) {
+    public void toeng1(View view) {
         Intent intent = new Intent(Books.this, p1eng.class);
         startActivity(intent);
     }
-    public void button2(View view) {
+
+    public void toeng2(View view) {
+        Intent intent = new Intent(Books.this, p2eng.class);
+        startActivity(intent);
+    }
+
+    public void toeng3(View view) {
         Intent intent = new Intent(Books.this, p3eng.class);
         startActivity(intent);
     }
+
+    public void tomath1(View view) {
+        Intent intent = new Intent(Books.this, p1math.class);
+        startActivity(intent);
+    }
+
+    public void tomath2(View view) {
+        Intent intent = new Intent(Books.this, p2math.class);
+        startActivity(intent);
+    }
+
+    public void tomath3(View view) {
+        Intent intent = new Intent(Books.this, p3math.class);
+        startActivity(intent);
+    }
+
 
 }

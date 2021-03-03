@@ -11,10 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".SubjectActivity"></activity>
+        <activity android:name=".books.p3math"></activity>
+        <activity android:name=".books.p2math" />
+        <activity android:name=".books.p1math" />
+        <activity android:name=".books.p2eng" />
+        <activity android:name=".SubjectActivity" />
         <activity android:name=".LessonsActivity" />
-        <activity android:name=".CoursesActivity"
-            android:theme="@style/Theme.IStudyTrial"/>
+        <activity
+            android:name=".CoursesActivity"
+            android:theme="@style/Theme.IStudyTrial" />
         <activity android:name=".PaymentActivity" />
         <activity
             android:name=".NotesContentActivity"
