@@ -1,6 +1,7 @@
 package com.example.istudy.services;
 
 import com.example.istudy.models.Courses;
+import com.example.istudy.models.Lesson;
 import com.example.istudy.models.LoginRequest;
 import com.example.istudy.models.LoginResponse;
 import com.example.istudy.models.RegisterRequest;
@@ -22,5 +23,7 @@ public interface UserService {
 
     @GET("courses/")
     Call<List<Courses>> getPost();
+    @GET("lessons/")
+    Call<List<Lesson>> getLesson();
 }
 
