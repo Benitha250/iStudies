@@ -19,59 +19,65 @@
         android:paddingLeft="80dp"
         android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Register"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:paddingHorizontal="8dp"
-        android:background="@drawable/rounded_button"
-        android:layout_marginLeft="27dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/atma_semibold"
+            android:padding="10dp"
+            android:paddingHorizontal="8dp"
+            android:text="Register"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/toLoginPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="7dp"
-        android:layout_marginTop="-48dp"
-        android:background="@drawable/rounded_button"
-        android:text="Login"
-        android:layout_marginLeft="114dp" />
+        <Button
+            android:id="@+id/toLoginPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="134dp"
+            android:layout_marginLeft="134dp"
+            android:layout_marginTop="-48dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/atma_semibold"
+            android:padding="7dp"
+            android:text="Login" />
 
-    <EditText
-        android:id="@+id/names"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:hint="Full names"
-        android:layout_marginBottom="10dp"
-        android:textColorHint="@color/black"
-        android:layout_alignParentLeft="true" />
+        <EditText
+            android:id="@+id/names"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="Full names"
+            android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Username"
-        android:layout_marginBottom="10dp"
-        android:textColorHint="@color/black"
-        android:layout_alignParentRight="true" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="Username"
+            android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:layout_marginBottom="10dp"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/black"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/black" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -83,21 +89,23 @@
             />
 
         <EditText
-        android:id="@+id/password"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="password"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPassword"
-        android:textColorHint="@color/black" />
+            android:id="@+id/password"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black" />
 
         <EditText
-        android:id="@+id/confirmPassword"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColorHint="@color/black"/>
+            android:id="@+id/confirmPassword"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black" />
         <!--<EditText
             android:id="@+id/phone"
             android:layout_width="250dp"
@@ -130,10 +138,11 @@
                 android:id="@+id/carrierNumber"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/source_code_pro_semibold"
                 android:hint="phone"
-                android:textColorHint="@color/black"
                 android:inputType="phone"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColorHint="@color/black" />
             <ImageView
                 android:id="@+id/imageCheck"
                 android:layout_width="30dp"
@@ -150,6 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/green"
+            android:fontFamily="@font/atma_semibold"
             android:text="Register"
             android:textColor="@color/white" />
 

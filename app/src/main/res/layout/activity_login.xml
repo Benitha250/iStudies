@@ -22,44 +22,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
             android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/atma_semibold"
+            android:padding="10dp"
+            android:paddingHorizontal="8dp"
             android:text="Login"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/rounded_button"
-            android:layout_marginLeft="57dp" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/toRegisterPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="7dp"
+            android:layout_marginStart="134dp"
+            android:layout_marginLeft="134dp"
             android:layout_marginTop="-48dp"
             android:background="@drawable/rounded_button"
-            android:text="Register"
-            android:layout_marginLeft="114dp" />
+            android:fontFamily="@font/atma_semibold"
+            android:padding="7dp"
+            android:text="Register" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:hint="Username"
             android:layout_marginBottom="10dp"
-            android:textColorHint="@color/black"
-            android:layout_alignParentLeft="true" />
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="Username"
+            android:textColorHint="@color/black" />
 
 
         <EditText
             android:id="@+id/password"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="password"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:hint="password"
             android:inputType="textPassword"
             android:textColorHint="@color/black" />
 
@@ -69,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background"
+            android:fontFamily="@font/atma_semibold"
             android:text="Login"
             android:textColor="@color/white"
             app:backgroundTint="@color/green" />
@@ -76,10 +82,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account? Click Register button!"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            />
+            android:fontFamily="@font/source_code_pro_semibold"
+            android:text="Don't have an account? Click Register button!"
+            android:textColor="@color/black" />
     </LinearLayout>
 
 

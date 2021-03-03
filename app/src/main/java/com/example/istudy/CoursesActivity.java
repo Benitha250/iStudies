@@ -6,10 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.istudy.Adapter.CoursesAdapter;
+import com.example.istudy.books.p3eng;
 import com.example.istudy.services.UserService;
+import com.flutterwave.raveandroid.RavePayActivity;
+import com.flutterwave.raveandroid.RaveUiManager;
+import com.flutterwave.raveandroid.rave_java_commons.RaveConstants;
 
 import java.util.List;
 
@@ -24,6 +29,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CoursesActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
+    @BindView(R.id.pay)
+    Button pay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,9 @@ public class CoursesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_courses);
 
         ButterKnife.bind(this);
+
+        pay.setOnClickListener(V->topayment());
+
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -63,5 +73,61 @@ public class CoursesActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void topayment() {
+        new RaveUiManager(this).setAmount(100)
+                .setCurrency("RWF")
+                .setfName("Benitha")
+                .setlName("Uwase")
+                .setEmail("benithauwase05@gmail.com")
+                .setNarration("Book")
+                .setPublicKey("FLWPUBK_TEST-e7170a6b8eeb8037d0eb1d5561c86a65-X")
+                .setEncryptionKey("FLWSECK_TESTeb09f8eb8d17")
+                .setTxRef(System.currentTimeMillis()+"ref")
+                .setPhoneNumber("0780873772", true)
+                .acceptAccountPayments(true)
+                .acceptCardPayments(true)
+                .acceptMpesaPayments(false)
+                .acceptAchPayments(false)
+                .acceptGHMobileMoneyPayments(false)
+                .acceptUgMobileMoneyPayments(false)
+                .acceptZmMobileMoneyPayments(false)
+                .acceptRwfMobileMoneyPayments(true)
+                .acceptSaBankPayments(false)
+                .acceptUkPayments(false)
+                .acceptBankTransferPayments(false)
+                .acceptUssdPayments(false)
+                .acceptBarterPayments(false)
+                .acceptFrancMobileMoneyPayments(false)
+                .allowSaveCardFeature(false)
+                .onStagingEnv(false)
+                .withTheme(R.style.MyCustomTheme)
+                .initialize();
+
+        Intent intent = new Intent(CoursesActivity.this, PaymentActivity.class);
+        startActivity(intent);
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == RaveConstants.RAVE_REQUEST_CODE && data != null) {
+            String message = data.getStringExtra("response");
+            if (resultCode == RavePayActivity.RESULT_SUCCESS) {
+                Toast.makeText(this, "SUCCESS ", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CoursesActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+            else if (resultCode == RavePayActivity.RESULT_ERROR) {
+                Toast.makeText(this, "ERROR ", Toast.LENGTH_SHORT).show();
+            }
+            else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
+                Toast.makeText(this, "CANCELLED ", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
