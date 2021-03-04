@@ -63,7 +63,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/image1"
                         android:layout_width="100dp"
                         android:layout_height="60dp"
                         android:layout_alignParentStart="true"
@@ -71,21 +71,20 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="44dp"
                         android:layout_marginTop="13dp"
-                        android:src="@drawable/book"
+                        android:src="@drawable/courses"
                         android:layout_marginLeft="44dp"
                         android:layout_alignParentLeft="true" />
 
                     <TextView
-                        android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView3"
+                        android:layout_below="@id/image1"
                         android:layout_marginStart="69dp"
                         android:layout_marginLeft="51dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="25dp"
                         android:fontFamily="@font/atma_semibold"
-                        android:text="Lessons" />
+                        android:text="Kindergarten" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -103,7 +102,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/image2"
                         android:layout_width="93dp"
                         android:layout_height="60dp"
                         android:layout_alignParentTop="true"
@@ -116,10 +115,9 @@
                         android:layout_alignParentRight="true" />
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView4"
+                        android:layout_below="@id/image2"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
@@ -135,24 +133,24 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="321dp"
             android:orientation="horizontal"
             android:padding="10dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="0dp"
             android:layout_alignParentLeft="true">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="5dp">
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:onClick="toGrade1">
 
                 <RelativeLayout
                     android:onClick="toCourse"
@@ -160,7 +158,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/image3"
                         android:layout_width="100dp"
                         android:layout_height="60dp"
                         android:layout_alignParentStart="true"
@@ -172,21 +170,110 @@
                         android:layout_alignParentLeft="true" />
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView6"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="140dp"
+                        android:layout_below="@id/image3"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginLeft="51dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="25dp"
                         android:fontFamily="@font/atma_semibold"
-                        android:text="Courses"/>
+                        android:text="Grade 1"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:elevation="5dp">
+
+                <RelativeLayout
+                    android:onClick="toCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/courses"
+                        android:layout_marginLeft="44dp"
+                        android:layout_alignParentLeft="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/image4"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginLeft="51dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="Grade 2"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="481dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentLeft="true">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:elevation="5dp">
+
+                <RelativeLayout
+                    android:onClick="tolessons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image5"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/courses"
+                        android:layout_marginLeft="44dp"
+                        android:layout_alignParentLeft="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/image5"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginLeft="51dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/atma_semibold"
+                        android:text="Grade 3" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 

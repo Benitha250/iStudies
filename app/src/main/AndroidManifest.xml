@@ -6,12 +6,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".books.p3math"></activity>
+        <activity android:name=".Grade1NContentActivity"
+            android:theme="@style/Theme.IStudyTrial"></activity>
+        <activity android:name=".Grade1NotesActivity" />
+        <activity android:name=".Grade1Activity" />
+        <activity android:name=".books.p3math" />
         <activity android:name=".books.p2math" />
         <activity android:name=".books.p1math" />
         <activity android:name=".books.p2eng" />
@@ -27,10 +31,18 @@
         <activity
             android:name=".NotesActivity"
             android:theme="@style/Theme.IStudyTrial" />
-        <activity android:name=".ClassesActivity" />
-        <activity android:name=".books.p3eng" />
-        <activity android:name=".books.p1eng" />
-        <activity android:name=".Books" />
+        <activity
+            android:name=".ClassesActivity"
+            android:theme="@style/Theme.IStudyTrial" />
+        <activity
+            android:name=".books.p3eng"
+            android:theme="@style/Theme.IStudyTrial" />
+        <activity
+            android:name=".books.p1eng"
+            android:theme="@style/Theme.IStudyTrial" />
+        <activity
+            android:name=".Books"
+            android:theme="@style/Theme.IStudyTrial" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".HomeActivity"

@@ -21,7 +21,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private RelativeLayout homePage;
     SharedPreferenceManager sharedPreferenceManager;
-    private ImageView lessonsicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         homePage = findViewById(R.id.homePage);
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
-        lessonsicon = findViewById(R.id.imageView3);
-        lessonsicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ClassesActivity.class);
-                startActivity(intent);
 
-            }
-        });
 
 
     }
@@ -99,6 +90,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void toCourse(View view) {
         Intent intent = new Intent(HomeActivity.this, LessonsActivity.class);
+        startActivity(intent);
+    }
+
+    public void toGrade1(View view) {
+        Intent intent = new Intent(HomeActivity.this, Grade1Activity.class);
         startActivity(intent);
     }
 
