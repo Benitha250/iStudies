@@ -49,6 +49,18 @@
                     android:layout_height="match_parent"
                     android:onClick="toeng1"
                     >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginLeft="44dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/p1eng" />
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
@@ -57,23 +69,11 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="51dp"
+                        android:layout_below="@id/imageView1"
                         android:layout_marginLeft="51dp"
                         android:layout_marginTop="22dp"
                         android:fontFamily="@font/atma_semibold"
                         android:text="P1 English book" />
-
-                    <ImageView
-                        android:id="@+id/imageView1"
-                        android:layout_width="150dp"
-                        android:layout_height="110dp"
-                        android:layout_below="@id/textView1"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginLeft="44dp"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/p1eng" />
 
 
                 </RelativeLayout>
