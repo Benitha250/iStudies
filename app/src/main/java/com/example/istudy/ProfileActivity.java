@@ -17,23 +17,26 @@ import butterknife.ButterKnife;
 public class ProfileActivity extends AppCompatActivity {
     @BindView(R.id.textViewwelcome)
     TextView welcome;
+    SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
-        LoginResponse user = SharedPreferenceManager.getInstance(this).getUser();
-        welcome.setText("Welcome "+user.getToken());
+        //LoginResponse user = SharedPreferenceManager.getInstance(this).getUser();
+       // welcome.setText("Welcome "+user.getToken());
+        sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
+        welcome.setText("Welcome "+sharedPreferenceManager.getUser().getUsername());
     }
     @Override
     protected void onStart() {
         super.onStart();
-        if(!SharedPreferenceManager.getInstance(this).isLoggedIn()){
+       /* if(!SharedPreferenceManager.getInstance(this).isLoggedIn()){
             Intent intent = new Intent(ProfileActivity.this,LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 
-        }
+        }*/
     }
 }

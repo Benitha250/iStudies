@@ -131,7 +131,8 @@
                 android:id="@+id/ccpicker"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                app:ccp_countryPreference="us,in"
+                app:ccp_defaultNameCode="RW"
+                app:ccp_showNameCode="true"
                 />
 
             <EditText
