@@ -2,14 +2,16 @@ package com.example.istudy.models;
 
 import java.io.Serializable;
 
-public class LoginResponse implements Serializable {
+public class LoginResponse {
 
     private String token;
-    private String access;
+    private User user;
+    //private String access;
 
-    public LoginResponse(String token, String access) {
+
+    public LoginResponse(String token, User user) {
         this.token = token;
-        this.access = access;
+        this.user = user;
     }
 
     public String getToken() {
@@ -20,11 +22,11 @@ public class LoginResponse implements Serializable {
         this.token = token;
     }
 
-    public String getAccess() {
-        return access;
+    public User getUser() {
+        return user;
     }
 
-    public void setAccess(String access) {
-        this.access = access;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.istudy.Adapter.CoursesAdapter;
 import com.example.istudy.books.p3eng;
 import com.example.istudy.services.UserService;
+import com.example.istudy.storage.SharedPreferenceManager;
 import com.flutterwave.raveandroid.RavePayActivity;
 import com.flutterwave.raveandroid.RaveUiManager;
 import com.flutterwave.raveandroid.rave_java_commons.RaveConstants;
@@ -31,6 +32,7 @@ public class CoursesActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
     @BindView(R.id.pay)
     Button pay;
+    SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class CoursesActivity extends AppCompatActivity {
                 Toast.makeText(CoursesActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+        sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
 
     }
 
@@ -85,7 +88,7 @@ public class CoursesActivity extends AppCompatActivity {
                 .setPublicKey("FLWPUBK_TEST-e7170a6b8eeb8037d0eb1d5561c86a65-X")
                 .setEncryptionKey("FLWSECK_TESTeb09f8eb8d17")
                 .setTxRef(System.currentTimeMillis()+"ref")
-                .setPhoneNumber("0780873772", true)
+                .setPhoneNumber("0784486530", true)
                 .acceptAccountPayments(true)
                 .acceptCardPayments(true)
                 .acceptMpesaPayments(false)
