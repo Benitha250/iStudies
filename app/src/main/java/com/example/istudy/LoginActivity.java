@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     AwesomeValidation awesomeValidation;
     private ProgressDialog mAuthProgressDialog;
+    SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +78,14 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(SharedPreferenceManager.getInstance(this).isLoggedIn()){
+       if(sharedPreferenceManager.isLoggedIn()){
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
@@ -108,11 +110,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(response.isSuccessful()){
 
-                    SharedPreferenceManager.getInstance(LoginActivity.this).saveUser(loginResponse);
+                    sharedPreferenceManager.saveUser(loginResponse.getUser());
                     String message = "Successfully logged in";
                   
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this,CoursesActivity.class).putExtra("data",loginResponse);
+                    Intent intent = new Intent(LoginActivity.this,CoursesActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

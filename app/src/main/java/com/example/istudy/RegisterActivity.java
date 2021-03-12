@@ -102,8 +102,9 @@ public class RegisterActivity extends AppCompatActivity {
         awesomeValidation.addValidation(this,R.id.names, RegexTemplate.NOT_EMPTY,R.string.invalid_names);
         awesomeValidation.addValidation(this,R.id.username, RegexTemplate.NOT_EMPTY,R.string.invalid_username);
         awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
-
-        String regexPassword = ".{3,}";
+        //awesomeValidation.addValidation(this,R.id.carrierNumber, "[5-9](1)[0-9](9)$",R.string.invalid_phone);
+        //awesomeValidation.addValidation(this,R.id.carrierNumber, "[0-9](10)",R.string.invalid_phone);
+        String regexPassword = ".{8,}";
         awesomeValidation.addValidation(this, R.id.password, regexPassword, R.string.week_passwor);
         awesomeValidation.addValidation(this, R.id.confirmPassword, R.id.password, R.string.invalid_confirm_password);
 
@@ -122,6 +123,8 @@ public class RegisterActivity extends AppCompatActivity {
                     String Role = spinner.getSelectedItem().toString();
                     String phone =ccpicker.getFullNumber();
                     Double number = Double.parseDouble(phone);
+
+
 
                     RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, number, Password, Password2);
 
