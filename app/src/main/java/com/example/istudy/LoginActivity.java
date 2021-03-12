@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.example.istudy.models.Course;
 import com.example.istudy.models.LoginRequest;
 import com.example.istudy.models.LoginResponse;
 import com.example.istudy.services.ApiClient;
@@ -79,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
-
     }
 
     @Override
@@ -114,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                     String message = "Successfully logged in";
                   
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, CoursesActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

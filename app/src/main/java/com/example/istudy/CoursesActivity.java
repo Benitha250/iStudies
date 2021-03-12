@@ -81,14 +81,13 @@ public class CoursesActivity extends AppCompatActivity {
     public void topayment() {
         new RaveUiManager(this).setAmount(10000)
                 .setCurrency("RWF")
-                .setfName("Benitha")
-                .setlName("Uwase")
-                .setEmail("benithauwase05@gmail.com")
+                .setfName(sharedPreferenceManager.getUser().getFull_name())
+                .setEmail(sharedPreferenceManager.getUser().getEmail())
                 .setNarration("Book")
                 .setPublicKey("FLWPUBK_TEST-e7170a6b8eeb8037d0eb1d5561c86a65-X")
                 .setEncryptionKey("FLWSECK_TESTeb09f8eb8d17")
                 .setTxRef(System.currentTimeMillis()+"ref")
-                .setPhoneNumber("0784486530", true)
+                .setPhoneNumber("+"+sharedPreferenceManager.getUser().getPhone_number(), true)
                 .acceptAccountPayments(true)
                 .acceptCardPayments(true)
                 .acceptMpesaPayments(false)
@@ -108,9 +107,6 @@ public class CoursesActivity extends AppCompatActivity {
                 .withTheme(R.style.MyCustomTheme)
                 .initialize();
 
-        Intent intent = new Intent(CoursesActivity.this, PaymentActivity.class);
-        startActivity(intent);
-
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -118,15 +114,15 @@ public class CoursesActivity extends AppCompatActivity {
         if (requestCode == RaveConstants.RAVE_REQUEST_CODE && data != null) {
             String message = data.getStringExtra("response");
             if (resultCode == RavePayActivity.RESULT_SUCCESS) {
-                Toast.makeText(this, "SUCCESS ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CoursesActivity.this, "SUCCESS ", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(CoursesActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
             else if (resultCode == RavePayActivity.RESULT_ERROR) {
-                Toast.makeText(this, "ERROR ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CoursesActivity.this, "ERROR ", Toast.LENGTH_SHORT).show();
             }
             else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
-                Toast.makeText(this, "CANCELLED ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CoursesActivity.this, "CANCELLED ", Toast.LENGTH_SHORT).show();
             }
         }
         else {
