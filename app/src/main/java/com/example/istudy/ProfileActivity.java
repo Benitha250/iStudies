@@ -44,11 +44,12 @@ public class ProfileActivity extends AppCompatActivity {
        // welcome.setText("Welcome "+user.getToken());
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
 
-        username.setText(sharedPreferenceManager.getUser().getUsername());
         full_name.setText(sharedPreferenceManager.getUser().getFull_name());
+        username.setText(sharedPreferenceManager.getUser().getUsername());
         email.setText(sharedPreferenceManager.getUser().getEmail());
-        phone.setText(sharedPreferenceManager.getUser().getPhone_number());
         role.setText(sharedPreferenceManager.getUser().getRole());
+        phone.setText(sharedPreferenceManager.getUser().getPhone_number());
+
     }
     @Override
     protected void onStart() {

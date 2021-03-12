@@ -9,7 +9,7 @@ public class User {
     private String role;
     private String phone_number;
 
-    public User(int pk, String username, String email, String full_name, String role, String phone_number) {
+    public User(int pk, String username, String full_name, String email, String phone_number, String role) {
         this.pk = pk;
         this.username = username;
         this.email = email;

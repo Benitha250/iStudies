@@ -36,9 +36,9 @@ public class SharedPreferenceManager {
          editor.putString("full_name",user.getFull_name());
          editor.putString("username",user.getUsername());
          editor.putString("email",user.getEmail());
-         editor.putString("phone_number",user.getPhone_number());
          editor.putString("role",user.getRole());
-         editor.putBoolean("Logged in",true);
+        editor.putString("phone_number",user.getPhone_number());
+        editor.putBoolean("Logged in",true);
          editor.apply();
 
 

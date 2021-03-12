@@ -26,9 +26,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         homePage = findViewById(R.id.homePage);
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
-        Toast.makeText(this,"Welcome"+sharedPreferenceManager.getUser().getUsername() ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Welcome "+sharedPreferenceManager.getUser().getUsername() ,Toast.LENGTH_SHORT).show();
 
 
 

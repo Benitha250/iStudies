@@ -32,10 +32,8 @@
             android:fontFamily="@font/atma_semibold"
             android:text="Lesson 1: English"
             android:textColor="@color/black"
-            android:textSize="25dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
     </LinearLayout>
-
-
 
 </androidx.cardview.widget.CardView>

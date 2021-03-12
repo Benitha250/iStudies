@@ -114,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                     String message = "Successfully logged in";
                   
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this,CoursesActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
