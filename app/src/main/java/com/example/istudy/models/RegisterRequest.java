@@ -5,12 +5,12 @@ public class RegisterRequest {
     private String username;
     private String email;
     private String role;
-    private Double phone_number;
+    private String phone_number;
     private String password;
     private String password2;
 
 
-    public RegisterRequest(String full_name, String username, String email, String role, Double phone_number, String password, String password2) {
+    public RegisterRequest(String full_name, String username, String email, String role, String phone_number, String password, String password2) {
         this.full_name = full_name;
         this.username = username;
         this.email = email;
@@ -52,11 +52,11 @@ public class RegisterRequest {
         this.role = role;
     }
 
-    public Double getPhone_number() {
+    public String getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(Double phone_number) {
+    public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
 

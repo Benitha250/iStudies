@@ -42,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.password) EditText password;
     @BindView(R.id.confirmPassword) EditText confirmPassword;
 
-
     AwesomeValidation awesomeValidation;
     private ProgressDialog mAuthProgressDialog;
 
@@ -121,12 +120,21 @@ public class RegisterActivity extends AppCompatActivity {
                     String Password = password.getText().toString();
                     String Password2 = confirmPassword.getText().toString();
                     String Role = spinner.getSelectedItem().toString();
-                    String phone =ccpicker.getFullNumber();
-                    Double number = Double.parseDouble(phone);
+                    String number =ccpicker.getFullNumber();
+
+                    String lastTenDigits = "";
+
+                    if (number.length() > 10)
+                    {
+                        lastTenDigits = number.substring(number.length() - 10);
+                    }
+                    else
+                    {
+                        lastTenDigits = number;
+                    }
 
 
-
-                    RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, number, Password, Password2);
+                    RegisterRequest registerRequest = new RegisterRequest(FullNames, Name, Email, Role, lastTenDigits, Password, Password2);
 
                     registerUser(registerRequest);
                 }else{
@@ -161,7 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     String msg = "Success";
                     Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(RegisterActivity.this,CoursesActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                     startActivity(intent);
 
                 }else {
@@ -174,8 +182,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 mAuthProgressDialog.dismiss();
-                String message = t.getLocalizedMessage();
-                Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_LONG).show();
+                //String message = t.getLocalizedMessage();
+                Toast.makeText(RegisterActivity.this,"Something went wrong.",Toast.LENGTH_LONG).show();
 
             }
         });

@@ -24,7 +24,6 @@
         <activity
             android:name=".CoursesActivity"
             android:theme="@style/Theme.IStudyTrial" />
-        <activity android:name=".PaymentActivity" />
         <activity
             android:name=".NotesContentActivity"
             android:theme="@style/Theme.IStudyTrial" />
