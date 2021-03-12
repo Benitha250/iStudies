@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LessonsActivity">
+    tools:context=".LessonsActivity"
+    android:background="@color/green">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_lessons"
         android:layout_width="match_parent"

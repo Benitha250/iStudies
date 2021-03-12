@@ -49,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+        //compositePageTransformer.addTransformer(new MarginPageTransformer(40));
         compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
             @Override
             public void transformPage(@NonNull View page, float position) {
-                float r = 1 - Math.abs(position);
+                float r = 0 - Math.abs(position);
                 page.setScaleY(1.8f + r * 0.15f);
             }
         });
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 slideHandler.removeCallbacks(sliderRunnable);
-                slideHandler.postDelayed(sliderRunnable,3000);
+                slideHandler.postDelayed(sliderRunnable,2000);
             }
         });
 

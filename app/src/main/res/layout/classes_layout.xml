@@ -12,13 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal"
-        android:background="@drawable/background">
+        android:background="@color/white">
         <ImageView
             android:id="@+id/img_class"
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_direction"
+            android:background="@color/green"
             />
+
         <TextView
             android:id="@+id/title_class"
             android:layout_width="wrap_content"
@@ -26,10 +28,10 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/atma_semibold"
             android:text="Lesson 1: English"
-            />
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
