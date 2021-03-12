@@ -11,8 +11,6 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="80dp"
-        android:paddingEnd="80dp"
         tools:ignore="MissingConstraints">
     </androidx.viewpager2.widget.ViewPager2>
 
@@ -37,11 +35,11 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="150dp"
-        android:layout_marginBottom="90dp"
-        android:background="@color/green"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/atma_semibold"
         android:text="Get Started"
-        android:textColor="@color/white"
+        android:textColor="#40739e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -49,10 +47,21 @@
         android:layout_width="143dp"
         android:layout_height="131dp"
         android:layout_marginRight="150dp"
-        android:layout_marginBottom="530dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/atma_semibold"
+        android:text="Excellence through simplicity!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_marginLeft="40dp" />
 
 
 
