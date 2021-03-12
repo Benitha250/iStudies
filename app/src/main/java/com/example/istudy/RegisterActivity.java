@@ -161,7 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     String msg = "Success";
                     Toast.makeText(RegisterActivity.this,msg,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this,CoursesActivity.class);
                     startActivity(intent);
 
                 }else {

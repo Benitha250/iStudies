@@ -56,7 +56,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.MyViewHolder
         private TextView title;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
+            title = itemView.findViewById(R.id.title_class);
         }
     }
 }
