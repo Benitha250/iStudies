@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:elevation="5dp">
@@ -13,25 +14,39 @@
         android:orientation="horizontal"
         android:background="@color/white">
         <ImageView
-            android:id="@+id/img_class"
+            android:id="@+id/img_subject"
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_direction"
             android:background="@color/green"
             />
-
-        <TextView
-            android:id="@+id/title_class"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="@font/atma_semibold"
-            android:text="Senses"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/atma_semibold"
+                android:text="Subject Name"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/tolessson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="View Course"
+                android:layout_marginLeft="30dp" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

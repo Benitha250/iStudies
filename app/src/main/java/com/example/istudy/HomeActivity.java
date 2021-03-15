@@ -94,6 +94,10 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, LessonsActivity.class);
         startActivity(intent);
     }
+    public void tocaliculumn(View view) {
+        Intent intent = new Intent(HomeActivity.this, CourseActivity.class);
+        startActivity(intent);
+    }
 
     public void toGrade1(View view) {
         Intent intent = new Intent(HomeActivity.this, Grade1Activity.class);

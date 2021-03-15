@@ -65,40 +65,5 @@ public class SharedPreferenceManager {
         editor.apply();
     }
 
-    /*
-    public void saveUser (LoginResponse user){
-        SharedPreferences sharedPreferences= mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putString("name",user.getToken());
-        editor.putString("password",user.getAccess());
-
-        editor.apply();
-
-    }
-    public boolean isLoggedIn(){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
-        return sharedPreferences.getInt("id",-1)!=-1;
-    }
-    public  LoginResponse getUser(){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
-        LoginResponse user = new LoginResponse(
-                sharedPreferences.getString("token",null),
-                sharedPreferences.getString("access",null));
-        return user;
-    }
-    public void clear(){
-        SharedPreferences sharedPreferences= mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
-    }
-    public void logout(){
-        SharedPreferences sharedPreferences= mCtx.getSharedPreferences(SHARED_PREFERENCE_NAME,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
-    }
-
-*/
 }

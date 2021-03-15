@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.istudy.Adapter.LessonsAdapter;
+import com.example.istudy.Adapter.CourseAdapter;
 import com.example.istudy.models.Lesson;
 import com.example.istudy.services.UserService;
 
@@ -21,25 +21,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LessonsActivity extends AppCompatActivity {
-
-    @BindView(R.id.recycler_view_lessons)
+public class CourseActivity extends AppCompatActivity {
+    @BindView(R.id.recyclerView_lessons_course)
     RecyclerView recyclerView;
-    private LessonsAdapter mAdapter;
-    public List<Lesson> lessons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lessons);
+        setContentView(R.layout.activity_course);
+
         ButterKnife.bind(this);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //Retrofit client = ApiClient.getRetrofit();
-        //Retrofit client2 = UserService.getRetrofit();
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://istudy4.herokuapp.com/curriculum/1/api/")
@@ -52,33 +46,22 @@ public class LessonsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Lesson>> call, Response<List<Lesson>> response) {
 
-                if (!response.isSuccessful()) {
-                    Toast.makeText(LessonsActivity.this, "Successfully retrieved!!!", Toast.LENGTH_LONG).show();
+                if (!response.isSuccessful()){
+                    Toast.makeText(CourseActivity.this, "Successfully retrieved!!!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 List<Lesson> lessonList = response.body();
-                LessonsAdapter lessonAdapterr = new LessonsAdapter(LessonsActivity.this, lessonList);
-                recyclerView.setAdapter(lessonAdapterr);
+                CourseAdapter courseAdapter = new CourseAdapter(CourseActivity.this, lessonList);
+                recyclerView.setAdapter(courseAdapter);
+
             }
 
             @Override
             public void onFailure(Call<List<Lesson>> call, Throwable t) {
 
-                Toast.makeText(LessonsActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CourseActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-    }
-
-    private void showFailureMessage() {
-        Toast.makeText(LessonsActivity.this, "Successfully retrieved!!!", Toast.LENGTH_LONG).show();
-        return;
-    }
-
-    private void showUnsuccessfulMessage() {
-        Toast.makeText(LessonsActivity.this, "Something went wrong!!!", Toast.LENGTH_LONG).show();
-        return;
-
     }
 }
