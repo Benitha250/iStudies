@@ -11,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".Grade1NContentActivity"
-            android:theme="@style/Theme.IStudyTrial"></activity>
+        <activity android:name=".NotesVideoActivity"></activity>
+        <activity android:name=".NotesLessonActivity" />
+        <activity android:name=".LessonActivity" />
+        <activity android:name=".CourseActivity" />
+        <activity
+            android:name=".Grade1NContentActivity"
+            android:theme="@style/Theme.IStudyTrial" />
         <activity android:name=".Grade1NotesActivity" />
         <activity android:name=".Grade1Activity" />
         <activity android:name=".books.p3math" />

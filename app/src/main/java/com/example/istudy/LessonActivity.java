@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.istudy.Adapter.SubjectAdapter;
+import com.example.istudy.Adapter.LessonAdapter;
 import com.example.istudy.models.Lesson;
-import com.example.istudy.models.Subject;
 
 import org.parceler.Parcels;
 
@@ -18,18 +17,14 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SubjectActivity extends AppCompatActivity {
-
-
-    @BindView(R.id.recycler_view_subject)
+public class LessonActivity extends AppCompatActivity {
+    @BindView(R.id.recyclerView_lessons)
     RecyclerView recyclerView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subject);
+        setContentView(R.layout.activity_lesson);
         ButterKnife.bind(this);
 
 
@@ -37,12 +32,11 @@ public class SubjectActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        Subject subject = Parcels.unwrap(getIntent().getParcelableExtra("subject"));
-        List<Subject> subjectsList = Collections.singletonList(subject);
+        Lesson lesson = Parcels.unwrap(getIntent().getParcelableExtra("lesson"));
+        List<Lesson> lessonList = Collections.singletonList(lesson);
 
-        SubjectAdapter subjectAdapter = new SubjectAdapter(SubjectActivity.this, subjectsList);
+        LessonAdapter lessonAdapter = new LessonAdapter(LessonActivity.this, lessonList);
 
-        recyclerView.setAdapter(subjectAdapter);
-
+        recyclerView.setAdapter(lessonAdapter);
     }
 }

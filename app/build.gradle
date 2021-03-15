@@ -62,6 +62,9 @@ dependencies {
 
     //phonecodepicker
     implementation 'com.hbb20:ccp:2.4.5'
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 
     //sendgrid
     implementation files('libs/sendgrid-0.1.2-jar.jar')
@@ -79,6 +82,18 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
     //circular image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //parceler
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+    //exoplayer
+
+
+    implementation 'com.github.khizar1556.MKVideoPlayer:mkvideoplayer:0.1.5'
+    implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.kk121:File-Loader:1.2'
 
 
 
