@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
+    android:layout_margin="10dp"
     android:elevation="5dp">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/img_subject"
             android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_height="87dp"
             android:src="@drawable/ic_direction"
             android:background="@color/green"
             />
@@ -36,13 +36,17 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/tolessson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:background="@color/green"
-                android:text="View Course"
-                android:layout_marginLeft="30dp" />
+                android:fontFamily="@font/atma_semibold"
+                android:textColor="@color/black"
+
+                android:text="View Course" />
 
         </LinearLayout>
 

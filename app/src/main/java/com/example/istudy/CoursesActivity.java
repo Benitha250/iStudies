@@ -30,8 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CoursesActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
-    @BindView(R.id.pay)
-    Button pay;
+    @BindView(R.id.pay) Button pay;
     SharedPreferenceManager sharedPreferenceManager;
 
     @Override
@@ -79,7 +78,7 @@ public class CoursesActivity extends AppCompatActivity {
     }
 
     public void topayment() {
-        new RaveUiManager(this).setAmount(10000)
+        new RaveUiManager(this).setAmount(20000)
                 .setCurrency("RWF")
                 .setfName(sharedPreferenceManager.getUser().getFull_name())
                 .setEmail(sharedPreferenceManager.getUser().getEmail())

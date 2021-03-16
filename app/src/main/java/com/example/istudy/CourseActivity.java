@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.istudy.Adapter.CourseAdapter;
@@ -24,6 +28,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CourseActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView_lessons_course)
     RecyclerView recyclerView;
+    @BindView(R.id.back)
+    TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +69,10 @@ public class CourseActivity extends AppCompatActivity {
                 Toast.makeText(CourseActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(CourseActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 }

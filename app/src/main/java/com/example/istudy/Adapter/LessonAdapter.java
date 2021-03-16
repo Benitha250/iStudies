@@ -51,7 +51,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         holder.name.setText(lessons.getSubject().getCourse().getName());
 
 
-        /*holder.name.setOnClickListener(new View.OnClickListener() {
+        holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -66,7 +66,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
                 context.startActivity(intent);
 
             }
-        });*/
+        });
         holder.note_lesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
