@@ -78,7 +78,7 @@ public class CoursesActivity extends AppCompatActivity {
     }
 
     public void topayment() {
-        new RaveUiManager(this).setAmount(20000)
+        new RaveUiManager(this).setAmount(100)
                 .setCurrency("RWF")
                 .setfName(sharedPreferenceManager.getUser().getFull_name())
                 .setEmail(sharedPreferenceManager.getUser().getEmail())

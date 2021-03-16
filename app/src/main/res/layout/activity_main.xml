@@ -21,10 +21,9 @@
         android:fontFamily="@font/kranky"
         android:text="iStudy"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#40739e"
+        android:textColor="#48a0e9"
         android:textSize="50dp"
         android:textStyle="bold"
-        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +37,7 @@
         android:background="@drawable/buttonshape"
         android:fontFamily="@font/atma_semibold"
         android:text="Get Started"
-        android:textColor="#40739e"
+        android:textColor="#48a0e9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

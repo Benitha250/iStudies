@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:background="@color/green"
+    android:background="@drawable/login"
     >
 
     <LinearLayout
@@ -159,10 +159,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/green"
+            android:background="@color/blue"
             android:fontFamily="@font/atma_semibold"
             android:text="Register"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/blue" />
 
     </LinearLayout>
 

@@ -80,7 +80,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         holder.video_lesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String video= "https://res.cloudinary.com/demo/video/upload/a_90/dog.mp4";
+                String video= "https://res.cloudinary.com/ucynthy12/video/upload/v1615888579/Basic_Math_For_Kids__Addition_and_Subtraction_x91fex.mp4";
                 Intent intent= new Intent(context, NotesVideoActivity.class);
                 intent.putExtra("video", Parcels.wrap(video));
                 //intent.putExtra("video", video);

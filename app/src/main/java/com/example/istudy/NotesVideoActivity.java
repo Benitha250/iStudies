@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
 public class NotesVideoActivity extends AppCompatActivity {
     @BindView(R.id.video)
     VideoView video;
-    String video_url="https://res.cloudinary.com/demo/video/upload/a_90/dog.mp4";
+    String video_url="https://res.cloudinary.com/ucynthy12/video/upload/v1615888579/Basic_Math_For_Kids__Addition_and_Subtraction_x91fex.mp4";
     ProgressDialog pd;
 
 
