@@ -7,14 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<!--
    <color name="green">#A3CB38</color>
+-->
     <color name="grey">#C7C7C7</color>
     <color name="dark_grey">#878787</color>
-    <color name="blue">#192a56</color>
 
     <color name="green2">#76B947</color>
     <color name="navigation">#A3CB38</color>
     <color name="navigation2">#49D49D</color>
+
+    <color name="blue">#48a0e9</color>
+    <color name="yellow">#f0ad4e</color>
+    <color name="green">#76b947</color>
 
 
 

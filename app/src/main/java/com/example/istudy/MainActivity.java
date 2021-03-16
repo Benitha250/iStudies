@@ -8,8 +8,10 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         sliderItems.add(new SliderItem(R.drawable.image2));
         sliderItems.add(new SliderItem(R.drawable.image3));
         sliderItems.add(new SliderItem(R.drawable.image4));
+        sliderItems.add(new SliderItem(R.drawable.image5));
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems, viewPager2));
 
@@ -67,6 +70,16 @@ public class MainActivity extends AppCompatActivity {
                 slideHandler.postDelayed(sliderRunnable,2000);
             }
         });
+
+        toHomeButton.setOnHoverListener(new View.OnHoverListener() {
+            @Override
+            public boolean onHover(View v, MotionEvent event) {
+                toHomeButton.setBackgroundColor(Color.BLUE);
+                toHomeButton.setTextColor(Color.WHITE);
+                return true;
+            }
+        });
+
 
         toHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override

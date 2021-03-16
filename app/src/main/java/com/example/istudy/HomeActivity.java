@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         /*    case R.id.help:
-                homePage.setBackgroundColor(Color.GREEN);
+                homePage.
                 break;
             case R.id.contact:
                 homePage.setBackgroundColor(Color.GREEN);
