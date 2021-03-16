@@ -14,8 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.istudy.CourseActivity;
-import com.example.istudy.LessonActivity;
-import com.example.istudy.NotesActivity;
 import com.example.istudy.R;
 import com.example.istudy.models.Course_;
 import com.example.istudy.models.Lesson;

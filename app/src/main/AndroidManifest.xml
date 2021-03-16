@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IStudy">
-        <activity android:name=".NotesVideoActivity"></activity>
+        <activity android:name=".NotesVideoActivity" />
         <activity android:name=".NotesLessonActivity" />
         <activity android:name=".LessonActivity" />
-        <activity android:name=".CourseActivity" />
+        <activity android:name=".CourseActivity"
+            android:theme="@style/Theme.IStudy"/>
         <activity
             android:name=".Grade1NContentActivity"
             android:theme="@style/Theme.IStudyTrial" />
@@ -24,8 +25,11 @@
         <activity android:name=".books.p2math" />
         <activity android:name=".books.p1math" />
         <activity android:name=".books.p2eng" />
-        <activity android:name=".SubjectActivity" />
-        <activity android:name=".LessonsActivity" />
+        <activity android:name=".SubjectActivity"
+            android:theme="@style/Theme.IStudy"/>
+
+        <activity android:name=".LessonsActivity"
+            android:theme="@style/Theme.IStudyTrial"/>
         <activity
             android:name=".CoursesActivity"
             android:theme="@style/Theme.IStudyTrial" />

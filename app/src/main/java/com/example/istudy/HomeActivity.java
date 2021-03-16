@@ -59,12 +59,12 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(this,ProfileActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.help:
+        /*    case R.id.help:
                 homePage.setBackgroundColor(Color.GREEN);
                 break;
             case R.id.contact:
                 homePage.setBackgroundColor(Color.GREEN);
-                break;
+                break;*/
             case R.id.logout:
                 logoutUser();
                 break;

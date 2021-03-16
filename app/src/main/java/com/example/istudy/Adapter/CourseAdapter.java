@@ -3,6 +3,7 @@ package com.example.istudy.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +52,8 @@ import java.util.List;
             Lesson lessons = lessonsList.get(position);
 
             holder.name_course.setText(lessons.getSubject().getCourse().getName());
-            holder.description_course.setText(lessons.getSubject().getCourse().getDescription());
-            holder.tosubject.setOnClickListener(new View.OnClickListener() {
+            //holder.description_course.setText(lessons.getSubject().getCourse().getDescription());
+            holder.name_course.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Subject subject= lessonsList.get(position).getSubject();
@@ -109,9 +110,9 @@ import java.util.List;
             public LessonViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                tosubject= itemView.findViewById(R.id.tosubject);
+                //tosubject= itemView.findViewById(R.id.tosubject);
                 name_course=itemView.findViewById(R.id.name_course);
-                description_course=itemView.findViewById(R.id.description_course);
+                //description_course=itemView.findViewById(R.id.description_course);
                 note_lesson = itemView.findViewById(R.id.note_lesson);
                 video_lesson=itemView.findViewById(R.id.video_lesson);
 
